@@ -12,7 +12,7 @@ iam:
   withOIDC: true # required
 
 karpenter:
-  version: '0.9.1'
+  version: '0.6.2' # eksctl currently only supports up to 0.6.*, although there is a 0.9.*
   createServiceAccount: true # default is false
   defaultInstanceProfile: 'KarpenterNodeInstanceProfile' # default is to use the IAM instance profile created by eksctl
 
