@@ -18,6 +18,7 @@ karpenter:
 
 managedNodeGroups:
   - name: managed-ng-1
+    instanceType: t3.medium
     minSize: 1
     maxSize: 3
     desiredCapacity: 1
