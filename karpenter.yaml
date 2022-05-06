@@ -13,7 +13,7 @@ spec:
   provider:
     instanceProfile: KarpenterNodeInstanceProfile
     subnetSelector:
-      karpenter.sh/discovery: ${CLUSTER_NAME}
+      karpenter.sh/discovery: demo-cluster
     securityGroupSelector:
-      karpenter.sh/discovery: ${CLUSTER_NAME}
+      karpenter.sh/discovery: demo-cluster
   ttlSecondsAfterEmpty: 30
