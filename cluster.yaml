@@ -1,0 +1,23 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: demo-cluster
+  region: eu-central-1
+  version: '1.22'
+  tags:
+    karpenter.sh/discovery: demo-cluster
+
+iam:
+  withOIDC: true # required
+
+karpenter:
+  version: '0.9.1'
+  createServiceAccount: true # default is false
+  defaultInstanceProfile: 'KarpenterNodeInstanceProfile' # default is to use the IAM instance profile created by eksctl
+
+managedNodeGroups:
+  - name: managed-ng-1
+    minSize: 1
+    maxSize: 3
+    desiredCapacity: 1
